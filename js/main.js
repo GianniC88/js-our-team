@@ -55,6 +55,9 @@ for (let i = 0; i < teamMembers.length; i++) {
   console.log(member);
 }
 
+const memberMarkup = `<li>${name},${role},${email},${img}</li>`;
+console.log(memberMarkup);
+
 //--generare la scheda di un utente
 
 //--aggiungere i dati all'elemento della DOM
