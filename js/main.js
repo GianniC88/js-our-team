@@ -46,19 +46,29 @@ const teamMembers = [
 ];
 
 //selezionare il nodo DOM dove inserire i dati della array team
-const ulEl = document.getElementById("team");
-let members = "";
+const rowEl = document.getElementById(".row");
+
 //ciclo nella array teamMembers
+let members = "";
 
 for (let i = 0; i < teamMembers.length; i++) {
   const member = teamMembers[i];
-  console.log(member);
-  const { name, role, email, img } = member;
-  console.log(name, role, email, img);
 
-  const memberMarkup = `<li>${name},${role},${email},${img}</li>`;
+  /*genera markup della funzione */
+  const memberMarkup = generateMemberMarkup(member);
   console.log(memberMarkup);
 }
+
+//funzione per generare il markup per i membri
+function generateMemberMarkup(member) {
+  const { name, role, email, img } = member;
+  /*genera markup della funzione*/
+  const memberMarkup = `<row>${name},${role},${email},${img}</row>`;
+  console.log(memberMarkup);
+  member = +memberMarkup;
+  //rowEl.insertAdjacentHTML("beforeend", memberMarkup);
+}
+rowEl.innerHTML = members;
 
 //--generare la scheda di un utente
 
